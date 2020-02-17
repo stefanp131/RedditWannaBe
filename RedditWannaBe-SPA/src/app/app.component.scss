@@ -1,26 +1,29 @@
+@import 'variables';
+
 :host {
+  
   .grid-container {
-    min-height: 1024px;
-    display: grid;
-    grid-template-columns: [block] 1fr;
-    grid-template-rows: [header] 4rem [content] 1fr [footer] 4rem;
+        min-height: 800px;
+            display: grid;
+    grid-template-columns: [block-start] 1fr [block-end];
+    grid-template-rows: [header-start] 4rem [header-end content-start] 1fr [content-end footer-start] 4rem [footer-end];
 
     .header {
-      background-color: aqua;
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
+      background-color: $red;
+      grid-column: block-start / block-end;
+      grid-row: header-start / header-end;
     }
 
     .content {
-      background-color: greenyellow;
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
+      background-color: $turqoise;
+      grid-column: block-start / block-end;
+      grid-row: content-start / content-end;
     }
 
     .footer {
-      background-color: hotpink;
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
+      background-color: $orange;
+      grid-column: block-start / block-end;
+      grid-row: footer-start / footer-end;
     }
   }
 }
