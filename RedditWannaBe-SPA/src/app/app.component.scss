@@ -1,0 +1,26 @@
+:host {
+  .grid-container {
+    min-height: 1024px;
+    display: grid;
+    grid-template-columns: [block] 1fr;
+    grid-template-rows: [header] 4rem [content] 1fr [footer] 4rem;
+
+    .header {
+      background-color: aqua;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .content {
+      background-color: greenyellow;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .footer {
+      background-color: hotpink;
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+  }
+}
