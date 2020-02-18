@@ -3,25 +3,31 @@
 :host {
   
   .grid-container {
-        min-height: 800px;
-            display: grid;
+    min-height: 800px;
+    display: grid;
     grid-template-columns: [block-start] 1fr [block-end];
-    grid-template-rows: [header-start] 4rem [header-end content-start] 1fr [content-end footer-start] 4rem [footer-end];
+    grid-template-rows: [header-start] 4rem [header-end content-start] 1fr [content-end footer-start] 2rem [footer-end];
+    grid-row-gap: .3rem;
+    background-color: $dark-grey;
+
 
     .header {
-      background-color: $red;
+      border-radius: 0 0 5px 5px;
+      background: linear-gradient(135deg, $red, $orange, $turqoise);
       grid-column: block-start / block-end;
       grid-row: header-start / header-end;
     }
 
     .content {
-      background-color: $turqoise;
+      border-radius: 5px;
+      background: linear-gradient(135deg, $red, $orange);
       grid-column: block-start / block-end;
       grid-row: content-start / content-end;
     }
 
     .footer {
-      background-color: $orange;
+      border-radius: 5px 5px 0 0;
+      background: linear-gradient(135deg, $turqoise, $red, $orange);
       grid-column: block-start / block-end;
       grid-row: footer-start / footer-end;
     }

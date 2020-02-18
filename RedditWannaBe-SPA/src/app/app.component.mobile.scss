@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px)
+{
+    :host{
+        .grid-container {
+            min-height: 800px;
+            display: grid;
+            grid-template-columns: [block-start] 1fr [block-end];
+            grid-template-rows: [header-start] 10rem [header-end content-start] 1fr [content-end footer-start] 2rem [footer-end];
+            row-gap: .3rem;
+        }
+    }
+}
