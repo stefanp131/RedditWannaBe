@@ -1,3 +1,9 @@
-<p>
-  login works!
-</p>
+<div class="form-style">
+<form>
+
+<input type="text" [(ngModel)]="username" name="username" placeholder="Your Name" />
+<input type="password" [(ngModel)]="password" name="password" placeholder="Your Password" />
+<h6 [innerHTML]="error" *ngIf="!!error"></h6>
+<button class="login-btn" (click)="login()">Login</button>
+</form>
+</div>

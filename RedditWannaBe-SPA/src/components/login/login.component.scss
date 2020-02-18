@@ -1,0 +1,79 @@
+@import 'variables';
+
+:host {
+    .form-style{
+        font-family: inherit;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 16px;
+        background: $indigo;
+    }
+ 
+    .form-style input[type="text"],
+    .form-style input[type="date"],
+    .form-style input[type="datetime"],
+    .form-style input[type="email"],
+    .form-style input[type="number"],
+    .form-style input[type="search"],
+    .form-style input[type="time"],
+    .form-style input[type="password"],
+    .form-style input[type="url"],
+    .form-style textarea,
+    .form-style select 
+    {
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        transition: all 0.30s ease-in-out;
+        outline: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 4%;
+        border: 1px solid #ccc;
+        padding: 3%;
+        font-family: inherit;
+        color: $dark-grey;
+    }
+    .form-style input[type="text"]:focus,
+    .form-style input[type="date"]:focus,
+    .form-style input[type="datetime"]:focus,
+    .form-style input[type="email"]:focus,
+    .form-style input[type="number"]:focus,
+    .form-style input[type="search"]:focus,
+    .form-style input[type="time"]:focus,
+    .form-style input[type="password"],
+    .form-style input[type="url"]:focus,
+    .form-style textarea:focus,
+    .form-style select:focus
+    {
+        box-shadow: 0 0 5px $indigo;
+        padding: 3%;
+        border: 1px solid $indigo;
+    }
+    .login-btn {
+        cursor: pointer;
+        width: 100%;
+        display:inline-block;
+        padding:0.5rem 1.6rem;
+        border:0.1rem solid #000000;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family: inherit;
+        font-weight:300;
+        color:$dark-grey;
+        text-shadow: 0 0.5rem 0.5rem rgba(0,0,0,0.35);
+        background-color: $indigo;
+        text-align:center;
+        transition: all 0.15s;
+    } 
+
+    .login-btn:hover {
+        text-shadow: 0 0 2rem rgba(255,255,255,1);
+        color:#FFFFFF;
+        border-color:#FFFFFF;
+    }
+}

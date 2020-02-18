@@ -7,7 +7,7 @@
         height: 100%;
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 2fr 1fr 1fr 1fr 1fr [login-start] 2fr [login-end register-start] 2fr [register-end logout-start] 2fr [logout-end]; 
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr  2fr [register-start] 2fr [register-end logout-start] 2fr [logout-end]; 
         justify-items: center;
         align-items: center;
 
@@ -23,7 +23,7 @@
 
         .login-column {
             grid-row: 1 / 2;
-            grid-column: login-start / login-end;
+            grid-column: logout-start / logout-end;
             width: 80%;
 
             .login-btn {
