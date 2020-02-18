@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
   password: string;
   error: string;
 
-  constructor(private auth: AuthService, private router: Router, private header: HeaderService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private header: HeaderService
+  ) {}
 
   ngOnInit() {}
 
@@ -25,19 +29,16 @@ export class LoginComponent implements OnInit {
       username: this.username,
       password: this.password
     };
-    this.auth.login(loginModel).subscribe(response => {
-
-      if(response.status === 401){
-        this.error = 'Unauthorized';
-        return;
-      }
-
-      this.error = '';
-      localStorage.setItem('token', response.body.token);
-      const decodedToken = helper.decodeToken(response.body.token);
-      localStorage.setItem('userInfo', JSON.stringify(decodedToken));
-      this.header.changeMessage(decodedToken.unique_name);
-      this.router.navigate(['/home']);
-    });
+    this.auth
+      .login(loginModel)
+      .subscribe(response => {
+        this.error = '';
+        localStorage.setItem('token', response.body.token);
+        const decodedToken = helper.decodeToken(response.body.token);
+        localStorage.setItem('userInfo', JSON.stringify(decodedToken));
+        this.header.changeMessage(decodedToken.unique_name);
+        this.router.navigate(['/home']);
+      },
+      () => this.error = 'Unauthorized');
   }
 }
