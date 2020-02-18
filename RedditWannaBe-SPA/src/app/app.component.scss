@@ -13,7 +13,7 @@
 
     .header {
       border-radius: 0 0 5px 5px;
-      background: linear-gradient(135deg, $red, $orange, $turqoise);
+      background: linear-gradient(135deg, $red, $orange);
       grid-column: block-start / block-end;
       grid-row: header-start / header-end;
     }
@@ -27,7 +27,7 @@
 
     .footer {
       border-radius: 5px 5px 0 0;
-      background: linear-gradient(135deg, $turqoise, $red, $orange);
+      background: linear-gradient(135deg, $red, $orange);
       grid-column: block-start / block-end;
       grid-row: footer-start / footer-end;
     }
