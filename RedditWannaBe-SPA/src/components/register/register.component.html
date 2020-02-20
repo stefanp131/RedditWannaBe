@@ -1,0 +1,16 @@
+<br>
+<h3 class="form-title">Register</h3>
+
+<div class="form-style">
+  <form>
+  
+  <input type="text" [(ngModel)]="username" name="username" placeholder="Your Name" />
+  <input type="password" [(ngModel)]="password" name="password" placeholder="Your Password" />
+  <input type="password" [(ngModel)]="confirmPassword" name="confirm-password" placeholder="Your Password Again" />
+
+  <h4 *ngIf="password !== confirmPassword" class="error">Passwords do not match</h4>
+  <h4 [innerHTML]="error" *ngIf="!!error" class="error"></h4>
+  <button class="register-btn" (click)="register()">register</button>
+  </form>
+  </div>
+  

@@ -12,6 +12,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { LoginComponent } from '../components/login/login.component';
 import { JwtInterceptorService } from 'src/services/jwtInterceptor.service';
+import { RegisterComponent } from 'src/components/register/register.component';
 
 @NgModule({
    declarations: [
@@ -20,7 +21,8 @@ import { JwtInterceptorService } from 'src/services/jwtInterceptor.service';
       FooterComponent,
       HeaderComponent,
       NotFoundComponent,
-      LoginComponent
+      LoginComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,

@@ -6,7 +6,7 @@
     <button [routerLink]="['/login']" class="login-btn">Login</button>
   </div>
   <div class="register-column">
-    <button class="register-btn">Register</button>
+    <button [routerLink]="['/register']" class="register-btn">Register</button>
   </div>
   <div class="logout-column" [hidden]="!loggedIn()">
     <button class="logout-btn" (click)="logout()">Logout</button>

@@ -59,7 +59,7 @@
         padding: 3%;
         border: 1px solid $indigo;
     }
-    .login-btn {
+    .register-btn {
         cursor: pointer;
         width: 100%;
         display:inline-block;
@@ -76,7 +76,7 @@
         transition: all 0.15s;
     } 
 
-    .login-btn:hover {
+    .register-btn:hover {
         text-shadow: 0 0 2rem rgba(255,255,255,1);
         color:#FFFFFF;
         border-color:#FFFFFF;
