@@ -1,0 +1,13 @@
+<br>
+<h3 class="form-title">Home --- Topics</h3>
+
+<div class="form-style">
+  <form>
+  
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Your Title" required/>
+  <textarea [(ngModel)]="description" name="description" placeholder="Type your Description" required></textarea>
+
+  <button class="create-topic-btn" type="submit" (click)="createTopic()">Create</button>
+  </form>
+</div>
+  

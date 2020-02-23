@@ -1,0 +1,14 @@
+<div class="card-body">
+  <h3 class="card-title">{{topic.title}}</h3>
+  <h5 class="card-subtitle">created by {{topic.createdBy}}</h5>
+  <br>
+  <h4 class="card-text">{{topic.description}}</h4> 
+  <!--<button class="btn btn-info btn-width mx-auto my-1" [routerLink]="[topic.id]">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>-->
+  <div class="delete-block">
+    <button class="delete-btn" *ngIf="topic.createdById === currentId" (click)="delete()">
+      delete topic <i class="fa fa-trash-o"></i>
+    </button>
+  </div>   
+</div>

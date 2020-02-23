@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px)
+{
+    :host{
+        .topic-list {  
+            padding: .5rem;                 
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: .3em;
+        }
+    }
+}

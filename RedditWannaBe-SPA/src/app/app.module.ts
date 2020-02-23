@@ -13,6 +13,8 @@ import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { LoginComponent } from '../components/login/login.component';
 import { JwtInterceptorService } from 'src/services/jwtInterceptor.service';
 import { RegisterComponent } from 'src/components/register/register.component';
+import { CreateTopicComponent } from 'src/components/create-topic/create-topic.component';
+import { TopicComponent } from 'src/components/topic/topic.component';
 
 @NgModule({
    declarations: [
@@ -22,7 +24,9 @@ import { RegisterComponent } from 'src/components/register/register.component';
       HeaderComponent,
       NotFoundComponent,
       LoginComponent,
-      RegisterComponent
+      RegisterComponent,
+      CreateTopicComponent,
+      TopicComponent
    ],
    imports: [
       BrowserModule,

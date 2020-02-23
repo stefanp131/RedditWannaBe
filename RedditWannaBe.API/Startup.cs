@@ -28,6 +28,9 @@ namespace RedditWannaBe.API
             services.AddDbContext<RedditWannaBeContext>(o => o.UseSqlServer(connectionString));
             services.AddControllers();
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<ITopicsRepository, TopicsRepository>();
+            services.AddScoped<INotesRepository, NotesRepository>();
+
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {

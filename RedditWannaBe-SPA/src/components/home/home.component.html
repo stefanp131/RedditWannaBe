@@ -1,3 +1,13 @@
-<p>
-  home works!
-</p>
+<div class="create-topic">
+  <app-create-topic (topicCreated)="refreshList()"></app-create-topic>
+</div>
+
+
+<div class="topic-list" >
+  <div class="topic-item" *ngFor="let item of topics; let i = index">
+    <app-topic
+      (topicDeleted)="refreshList()"
+      [topic]="topics[i]"
+    ></app-topic>
+  </div>
+</div>
