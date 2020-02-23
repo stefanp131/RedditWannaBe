@@ -2,7 +2,7 @@
     .topic-list {  
         padding: .5rem;                 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 25% 25% 25% 25%;
         grid-template-rows: 1fr;
         grid-gap: .3em;
     }
