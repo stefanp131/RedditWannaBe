@@ -1,6 +1,7 @@
 :host{
-    .topic-list {  
-        padding: .5rem;                 
+    .topic-list {
+        margin:auto;
+        width: 95%;  
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
         grid-template-rows: 1fr;

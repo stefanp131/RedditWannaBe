@@ -82,6 +82,18 @@
         border-color:#FFFFFF;
     }
 
+    .create-topic-btn:disabled {
+        background-color: grey;
+        color:$dark-grey;
+        border-color:#000;
+        text-shadow: 0 0;
+
+    }
+
+    .description {
+        resize: vertical;        
+    }
+
     .error {
         margin: .3rem;
         text-align: center;

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RedditWannaBe.DAL.Context;
 
 namespace RedditWannaBe.DAL.Migrations
 {
     [DbContext(typeof(RedditWannaBeContext))]
-    partial class RedditWannaBeContextModelSnapshot : ModelSnapshot
+    [Migration("20200224120945_AddColumnDateCreatedToTopicAndNote")]
+    partial class AddColumnDateCreatedToTopicAndNote
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

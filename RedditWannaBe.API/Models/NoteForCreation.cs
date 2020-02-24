@@ -11,5 +11,6 @@ namespace RedditWannaBe.API.Models
         public string Description { get; set; }
         [Required]
         public Guid CreatedById { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

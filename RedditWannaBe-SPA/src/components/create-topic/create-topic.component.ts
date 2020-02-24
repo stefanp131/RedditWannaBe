@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { TopicsService } from 'src/services/topics.service';
 import { TopicForCreation } from 'src/models/TopicForCreation';
 import { DecodedToken } from 'src/models/DecodedToken';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-topic',
@@ -9,11 +10,12 @@ import { DecodedToken } from 'src/models/DecodedToken';
   styleUrls: ['./create-topic.component.scss']
 })
 export class CreateTopicComponent implements OnInit {
-  title: string;
-  description: string;
+  topicTitle: string;
+  topicDescription: string;
   @Output() topicCreated: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private topics: TopicsService) { }
+  constructor(private topics: TopicsService) {
+   }
 
   ngOnInit() {
   }
@@ -22,8 +24,8 @@ export class CreateTopicComponent implements OnInit {
     const userInfoString = localStorage.getItem('userInfo');
     const userInfo = JSON.parse(userInfoString) as DecodedToken;
     const topic: TopicForCreation = {
-      title: this.title,
-      description: this.description,
+      title: this.topicTitle,
+      description: this.topicDescription,
       createdById: userInfo.nameid
     };
 

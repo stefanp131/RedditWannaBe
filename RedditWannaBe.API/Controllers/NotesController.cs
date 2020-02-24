@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RedditWannaBe.API.Models;
 using RedditWannaBe.DAL.Entities;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RedditWannaBe.API.Controllers
 {
-    [Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/topic/{topicId}/note")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -34,6 +35,7 @@ namespace RedditWannaBe.API.Controllers
                     Id = entity.Id,
                     Title = entity.Title,
                     Description = entity.Description,
+                    DateCreated = entity.DateCreated,
                     CreatedBy = entity.CreatedBy.Username,
                     CreatedById = entity.CreatedById,
                     Topic = entity.Topic.Title,
@@ -54,6 +56,7 @@ namespace RedditWannaBe.API.Controllers
                 Title = noteForCreation.Title,
                 Description = noteForCreation.Description,
                 CreatedById = noteForCreation.CreatedById,
+                DateCreated = DateTime.Now,
                 TopicId = topicId
             };
 

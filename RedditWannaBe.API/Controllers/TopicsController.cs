@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RedditWannaBe.API.Models;
 using RedditWannaBe.DAL.Entities;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace RedditWannaBe.API.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/topic")]
     [ApiController]
     public class TopicsController : ControllerBase
@@ -28,6 +30,7 @@ namespace RedditWannaBe.API.Controllers
                 Id = entity.Id,
                 Title = entity.Title,
                 Description = entity.Description,
+                DateCreated = entity.DateCreated,
                 CreatedBy = entity.CreatedBy.Username,
                 CreatedById = entity.CreatedById
             };
@@ -57,6 +60,7 @@ namespace RedditWannaBe.API.Controllers
                     Id = entity.Id,
                     Title = entity.Title,
                     Description = entity.Description,
+                    DateCreated = entity.DateCreated,
                     CreatedBy = entity.CreatedBy.Username,
                     CreatedById = entity.CreatedById
                 };
@@ -74,7 +78,8 @@ namespace RedditWannaBe.API.Controllers
             {
                 Title = topicForCreation.Title,
                 Description = topicForCreation.Description,
-                CreatedById = topicForCreation.CreatedById
+                DateCreated = DateTime.Now,
+                CreatedById = topicForCreation.CreatedById               
             };
 
             await repository.Create(entity);

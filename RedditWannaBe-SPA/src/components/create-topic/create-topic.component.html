@@ -1,13 +1,39 @@
-<br>
-<h3 class="form-title">Home --- Topics</h3>
+<br />
+<h3 class="form-title" >Home --- Topics</h3>
 
 <div class="form-style">
   <form>
-  
-  <input type="text" [(ngModel)]="title" name="title" placeholder="Your Title" required/>
-  <textarea [(ngModel)]="description" name="description" placeholder="Type your Description" required></textarea>
-
-  <button class="create-topic-btn" type="submit" (click)="createTopic()">Create</button>
+    <input
+      type="text"
+      [(ngModel)]="topicTitle"
+      maxlength="100"
+      name="title"
+      placeholder="Your Title"
+      required
+      #title="ngModel"
+    />
+    <textarea
+      rows="4"
+      class="description"
+      [(ngModel)]="topicDescription"
+      name="description"
+      maxlength="500"
+      #description="ngModel"
+      placeholder="Type your Description"
+      required
+    ></textarea>
+    <div *ngIf="title.invalid && (title.dirty || title.touched)">
+      <h4 *ngIf="title.errors.required" class="error">
+        Title is required
+      </h4>
+    </div>
+    <div *ngIf="description.invalid && (description.dirty || description.touched)">
+      <h4 *ngIf="description.errors.required" class="error">
+        Description is required
+      </h4>
+    </div>
+    <button class="create-topic-btn" [disabled]="(title.invalid || description.invalid) && (title.dirty && description.dirty || title.touched && description.touched)" type="submit" (click)="createTopic()">
+      Create
+    </button>
   </form>
 </div>
-  
